@@ -35,13 +35,34 @@ std::vector<int> convertDecToBin_iteratively(int decimalNumber)
 }
 
 
-void convertDecToBin_recursively(int decimalNumber)
+//void convertDecToBin_recursively(int decimalNumber)
+//{
+//
+//	//base case: 
+//	if (decimalNumber == 0)
+//	{
+//		cout << "Done";
+//	}
+//
+//	//recursive case: 
+//	else
+//	{
+//		//0010 1010
+//
+//		convertDecToBin_recursively(decimalNumber / 2); //reduce to a "smaller problem" (number)
+//
+//		cout << decimalNumber % 2;
+//
+//	}
+//}
+
+string convertDecToBin_recursively(int decimalNumber)
 {
 
 	//base case: 
 	if (decimalNumber == 0)
 	{
-		cout << "Done";
+		return "0"; // cout << "Done";
 	}
 
 	//recursive case: 
@@ -49,9 +70,10 @@ void convertDecToBin_recursively(int decimalNumber)
 	{
 		//0010 1010
 
-		convertDecToBin_recursively(decimalNumber / 2); //reduce to a "smaller problem" (number)
+		return char(48 + decimalNumber% 2) + 
+			(convertDecToBin_recursively(decimalNumber / 2)); //reduce to a "smaller problem" (number)
 
-		cout << decimalNumber % 2;
+		//cout << decimalNumber % 2;
 
 	}
 }
@@ -94,7 +116,7 @@ int main()
 	//0010 1010
 	//auto binaryEquivalent = convertDecToBin_iteratively(decimalNumber); 
 
-	convertDecToBin_recursively(decimalNumber);
+	cout << "Finally: " << convertDecToBin_recursively(decimalNumber);
 
 	//printBinaryDigits(binaryEquivalent, decimalNumber); 
 
