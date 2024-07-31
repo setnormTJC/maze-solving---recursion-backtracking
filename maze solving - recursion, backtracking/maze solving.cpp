@@ -28,7 +28,7 @@ void printMaze(const char theMaze[11][14])
 /*
 @returns the number of moves required to get to end of maze
 */
-int walkThoughMaze_automated(char maze[11][14], int currentRow, int currentColumn, 
+int randomlyWalkThroughMaze(char maze[11][14], int currentRow, int currentColumn, 
     int finishRow, int finishColumn)
 {
     random_device rd; 
@@ -218,7 +218,7 @@ int walkThoughMaze_automated(char maze[11][14], int currentRow, int currentColum
     return moveCount; 
 }
 
-void walkThoughMaze_withUserInput(char maze[11][14], int currentRow, int currentColumn, 
+void walkThroughMaze_withUserInput(char maze[11][14], int currentRow, int currentColumn, 
     int finishRow, int finishColumn)
 {
     while (currentRow != finishRow || currentColumn != finishColumn)
@@ -341,7 +341,14 @@ void walkThoughMaze_withUserInput(char maze[11][14], int currentRow, int current
     
 }
 
+/*
+@returns the number of moves required to get to end of maze
+*/
+int backtrackWalkthroughMaze(char maze[11][14], int currentRow, int currentColumn,
+    int finishRow, int finishColumn)
+{
 
+}
 
 
 int main()
@@ -361,7 +368,7 @@ int main()
     //};1
 
     //time_t
-    time_t current;
+    //time_t current;
     //cout << time(&current) << endl;
     //cout << ctime(&current) << endl;
     //11 rows, 14 columns - INCLUDING \0 char
@@ -413,7 +420,7 @@ int main()
     //    cout << "(a blank space)\n";
     //}
 
-    //walkThoughMaze_withUserInput(friendlyMaze, currentRow, currentColumn, 
+    //walkThroughMaze_withUserInput(friendlyMaze, currentRow, currentColumn, 
     //    finishRow, finishColumn);
     //float averageMoveCount = 0.0; 
 
@@ -421,7 +428,7 @@ int main()
     //int sumMoveCount = 0; 
     //for (int i = 0; i < NUMBER_OF_EXPERIMENTS; i++)
     //{
-/*        sumMoveCount += */walkThoughMaze_automated(friendlyMaze, currentRow, currentColumn,
+/*        sumMoveCount += */randomlyWalkThroughMaze(friendlyMaze, currentRow, currentColumn,
                             finishRow, finishColumn);
 
         //reset to original position: 
